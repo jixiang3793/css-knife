@@ -1,0 +1,24 @@
+{
+  "name": "@hezhi/css-knife",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 lib/ -o dist/",
+    "css-lint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
+    "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
+    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-utilities.min.css dist/css/bootstrap-utilities.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:css": "nodemon --watch lib/ --ext scss --exec \"npm-run-all css-compile\"",
+    "dev:html": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "stylelint": "^13.9.0"
+  }
+}

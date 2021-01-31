@@ -1,0 +1,8 @@
+$spacer: 8 !default;
+$spacers: (
+  0: 0,
+  $spacer * 1 : #{$spacer * 1}px,
+  $spacer * 2 : #{$spacer * 2}px,
+  $spacer * 3 : #{$spacer * 3}px,
+  $spacer * 4 : #{$spacer * 4}px,
+) !default;
