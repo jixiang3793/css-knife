@@ -2,3 +2,18 @@
 @import "mixins";
 @import "text-align.scss";
 @import "margin.scss";
+@import "animation.scss";
+@import "expr.scss";
+
+.d-flex {
+    display: flex;
+    > div {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+.mt-100 {
+    margin-top: 100px;
+    height: 200px;
+}

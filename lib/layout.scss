@@ -1,0 +1,206 @@
+.two-float-parent {
+    overflow: auto;
+    background-color: brown;
+    .two-float-left {
+        float: left;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+    .two-float-right {
+        min-height: 200px;
+        overflow: auto;
+        background-color: yellow;
+    }
+}
+.two-postition-parent {
+    background-color: brown;
+    position: relative;
+    .two-postition-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+    .two-postition-right {
+        min-height: 200px;
+        background-color: yellow;
+        margin-left: 200px;
+    }
+}
+
+.two-table-parent {
+    background-color: brown;
+    display: table;
+    width: 100%;
+    .two-table-left {
+        display: table-cell;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+    .two-table-right {
+        min-height: 200px;
+        background-color: yellow;
+        display: table-cell;
+    }
+}
+
+.two-flex-parent {
+    background-color: brown;
+    display: flex;
+    .two-flex-left {
+        background-color: aqua;
+        width: 200px;
+    }
+    .two-flex-right {
+        min-height: 200px;
+        background-color: yellow;
+        flex: auto 1 0;
+    }
+}
+.two-grid-parent {
+    background-color: brown;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    .two-grid-left {
+        background-color: aqua;
+    }
+    .two-grid-right {
+        min-height: 200px;
+        background-color: yellow;
+    }
+}
+
+.three-float-parent {
+    overflow: auto;
+    background-color: brown;
+    .three-float-left {
+        float: left;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+    .three-float-center {
+        min-height: 200px;
+        overflow: auto;
+        background-color: yellow;
+    }
+    .three-float-right {
+        float: right;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+}
+.three-postition-parent {
+    background-color: brown;
+    position: relative;
+    .three-postition-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+    .three-postition-center {
+        min-height: 200px;
+        background-color: yellow;
+        margin: 0 200px;
+    }
+    .three-postition-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+}
+
+.three-table-parent {
+    background-color: brown;
+    display: table;
+    width: 100%;
+    .three-table-left {
+        display: table-cell;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+    .three-table-center {
+        min-height: 200px;
+        background-color: yellow;
+        display: table-cell;
+    }
+    .three-table-right {
+        display: table-cell;
+        background-color: aqua;
+        width: 200px;
+        height: 100%;
+    }
+}
+
+.three-flex-parent {
+    background-color: brown;
+    display: flex;
+    .three-flex-left {
+        background-color: aqua;
+        width: 200px;
+    }
+    .three-flex-center {
+        min-height: 200px;
+        background-color: yellow;
+        flex: auto 1 0;
+    }
+    .three-flex-right {
+        background-color: aqua;
+        width: 200px;
+    }
+}
+.three-grid-parent {
+    background-color: brown;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    .three-grid-left {
+        background-color: aqua;
+    }
+    .three-grid-center {
+        min-height: 200px;
+        background-color: yellow;
+    }
+    .three-grid-right {
+        background-color: aqua;
+    }
+}
+
+.three-fm-parent {
+    background-color: brown;
+    overflow: auto;
+    // display: grid;
+    // grid-template-columns: 200px 1fr 200px;
+    .three-fm-left {
+        background-color: aqua;
+        width: 200px;
+        float: left;
+        margin-left: -100%;
+    }
+    .three-fm-center {
+        min-height: 200px;
+        background-color: yellow;
+        float: left;
+        width: 100%;
+        .three-fm-content {
+            margin: 0 200px;
+        }
+    }
+    .three-fm-right {
+        background-color: aqua;
+        width: 200px;
+        float: left;
+        margin-left: -200px;
+    }
+}

@@ -11,8 +11,8 @@
     "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-utilities.min.css dist/css/bootstrap-utilities.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
     "dev": "npm-run-all --parallel dev:*",
     "dev:css": "nodemon --watch lib/ --ext scss --exec \"npm-run-all css-compile\"",
-    "dev:html": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev:html": "parcel *.html",
+    "build": "parcel build *.html"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button type="button" id="btn">点击</button>
+        <button type="button" id="btn1">点击1</button>
+    </div>
+    <script>
+        window.hezhi = {
+            debounce: function(fn,tim) {
+                let start = null;
+                let tmpThis = null;
+                let tmpArgs = null;
+                let deTimer = null;
+
+                function _debounce(...args) {
+                    const now = Date.now();
+                    // this指向不同，记录首次的this上下文
+                    if (!start) {
+                        start = now;
+                        tmpThis = this;
+                        tmpArgs = args;
+                        deTimer = setInterval(() => {
+                            _debounce(...tmpArgs);
+                        }, tim / 2);
+                    } else {
+                        if (now - start >= tim) {
+                            start = null;
+                            clearInterval(deTimer);
+                            fn.apply(tmpThis, tmpArgs);
+                        }
+                    }
+                }
+                return _debounce;
+            }
+        }
+        document.getElementById('btn').addEventListener('click',hezhi.debounce(function(ev) {
+            console.log('ele ...',this.innerText);
+        },500));
+        document.getElementById('btn1').addEventListener('click',hezhi.debounce(function(ev) {
+            console.log('ele ...',this.innerText);
+        },700));
+    </script>
+</body>
+</html>
